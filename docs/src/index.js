@@ -18,7 +18,7 @@ class Document extends React.Component {
 
         <h2 className="handle-ui-components">Components</h2>
         <ul className="handle-ui-component-list">
-          <li><a href="/#tabs">Tabs</a></li>
+          <li><a href="#tabs">Tabs</a></li>
         </ul>
 
         <hr/>

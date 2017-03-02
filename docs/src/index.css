@@ -74,6 +74,7 @@ hr {
       width: 100%;
       padding: 8px 12px;
       text-decoration: none;
+      color: #444;
       &:active,
       &:focus,
       &:hover,
