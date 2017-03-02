@@ -12,14 +12,6 @@ export class ListItem extends Component {
   constructor() {
     super();
 
-    this.mouse = {
-      down: false,
-      clickable: true,
-    };
-    this.touch = {
-      timerId: null,
-      holding: false,
-    };
     this.pointer = {
       startX: null,
       startY: null,
@@ -30,11 +22,21 @@ export class ListItem extends Component {
       endTime: new Date(),
     };
 
+    // desktop
+    this.mouse = {
+      down: false,
+      clickable: true,
+    };
     this.handleClick = this._handleClick.bind(this);
     this.handleMouseDown = this._handleMouseDown.bind(this);
     this.handleMouseMove = this._handleMouseMove.bind(this);
     this.handleMouseUp = this._handleMouseUp.bind(this);
 
+    // mobile
+    this.touch = {
+      timerId: null,
+      holding: false,
+    };
     this.handleTouchStart = this._handleTouchStart.bind(this);
     this.handleTouchMove = this._handleTouchMove.bind(this);
     this.handleTouchEnd = this._handleTouchEnd.bind(this);
@@ -74,11 +76,13 @@ export class ListItem extends Component {
         endTime: new Date(),
       });
 
-      this._updateMouseMoveView();
+      if (this.context.onSort) {
+        this._updatePointerMoveView();
+      }
     }
   }
   _handleMouseUp() {
-    this._updateMouseUpView();
+    this._updatePointerUpView();
 
     const {currentIndex, targetIndex} = this._calcIndex();
 
@@ -129,7 +133,9 @@ export class ListItem extends Component {
         endTime: new Date(),
       });
 
-      this._updateTouchMoveView();
+      if (this.touch.holding && this.context.onSort) {
+        this._updatePointerMoveView();
+      }
     }
   }
   _handleTouchHold() {
@@ -146,7 +152,7 @@ export class ListItem extends Component {
   _handleTouchEnd() {
     clearTimeout(this.touch.timerId);
 
-    this._updateTouchEndView();
+    this._updatePointerUpView();
 
     const {currentIndex, targetIndex} = this._calcIndex();
     if (this.touch.holding && currentIndex !== null && targetIndex !== null && this.context.onSort) {
@@ -167,16 +173,17 @@ export class ListItem extends Component {
   }
 
   // update views
-  _updateMouseMoveView() {
-    if (this.context.onSort) {
-      this.listItem.classList.add('list-item__sorting');
+  _updatePointerMoveView() {
+    this.listItem.classList.add('list-item__sorting');
 
-      this._moveCurrentListItemAnimation();
-      this._moveListItemAnimation();
-      this._scrollListView();
-    }
+    this._moveCurrentListItemAnimation();
+    this._moveListItemAnimation();
+    this._scrollListView();
   }
-  _updateMouseUpView() {
+  _updatePointerUpView() {
+    if (this.listItem.classList.contains('list-item__holding')) {
+      this.listItem.classList.remove('list-item__holding');
+    }
     if (this.listItem.classList.contains('list-item__sorting')) {
       this.listItem.classList.remove('list-item__sorting');
     }
@@ -191,41 +198,10 @@ export class ListItem extends Component {
       listItemElement.style.transitionProperty = transitionProperties.HEIGHT;
     }
   }
-
-  _updateTouchMoveView() {
-    if (this.touch.holding && this.context.onSort) {
-      this.listItem.classList.add('list-item__sorting');
-
-      this._moveCurrentListItemAnimation();
-      this._moveListItemAnimation();
-      this._scrollListView();
-    }
-  }
   _updateTouchHoldView() {
     if (!this.listItem.classList.contains('list-item__holding')) {
       this.listItem.style.transitionProperty = transitionProperties.ALL;
       this.listItem.classList.add('list-item__holding');
-    }
-  }
-  _updateTouchEndView() {
-    if (this.listItem.classList.contains('list-item__holding')) {
-      this.listItem.classList.remove('list-item__holding');
-    }
-    if (this.listItem.classList.contains('list-item__sorting')) {
-      this.listItem.classList.remove('list-item__sorting');
-    }
-
-    const listElement = this.context.listElement();
-    const listItemElements = listElement.querySelectorAll('.list-item');
-
-    for (let index = 0; index < listItemElements.length; index++) {
-      const listItemElement = listItemElements[index];
-
-      listItemElement.style.transitionProperty = transitionProperties.NONE;
-      listItemElement.style.transform = 'translateY(0px)';
-      setTimeout(() => {
-        listItemElement.style.transitionProperty = transitionProperties.HEIGHT;
-      }, TRANSITION_TIME);
     }
   }
 
@@ -379,10 +355,6 @@ export class ListItem extends Component {
   }
   render() {
     const props = Object.assign({}, this.props);
-    delete props.onSwipeLeft;
-    delete props.onSwipeRight;
-    delete props.througnRight;
-    delete props.througnLeft;
 
     return (
       <div
