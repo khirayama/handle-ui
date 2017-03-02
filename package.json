@@ -1,9 +1,10 @@
 {
-  "name": "handle-ui",
+  "name": "@khirayama/handle-ui",
   "version": "0.0.0",
   "repository": {},
   "license": "MIT",
   "scripts": {
+    "prepublish": "npm run build:scripts && npm run build:styles",
     "build": "npm run build:scripts & npm run build:styles",
     "watch": "npm run watch:scripts & npm run watch:styles",
     "build:scripts": "babel src --out-dir lib",
