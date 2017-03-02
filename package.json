@@ -1,6 +1,7 @@
 {
   "name": "@khirayama/handle-ui",
   "version": "0.0.1",
+  "main": "lib",
   "repository": {},
   "license": "MIT",
   "scripts": {
