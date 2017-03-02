@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "start": "webpack-dev-server & postcss -c .postcssrc.js src/index.css -w",
-    "build": "webpack & postcss -c .postcssrc.js src/index.css"
+    "build": "webpack && postcss -c .postcssrc.js src/index.css"
   },
   "dependencies": {
     "autoprefixer": "^6.7.6",

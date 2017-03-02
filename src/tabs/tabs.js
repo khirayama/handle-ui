@@ -36,5 +36,4 @@ Tabs.childContextTypes = {
 Tabs.propTypes = {
   index: PropTypes.number,
   children: PropTypes.node,
-  enableQueryString: PropTypes.bool,
 };
