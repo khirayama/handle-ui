@@ -1,0 +1,17 @@
+/* tab */
+.tabs,
+.tab-list,
+.tab-list-item,
+.tab-content-list,
+.tab-content-list-inner,
+.tab-content-list-item {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  border: 0;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  touch-callout: none;
+  user-select: none;
+  font-size: inherit;
+}

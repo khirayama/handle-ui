@@ -1,0 +1,36 @@
+.tabs {
+  overflow: hidden;
+
+  .tab-list {
+    width: 100%;
+    .tab-list-inner {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      .tab-list-item {
+        flex: 1;
+        cursor: pointer;
+        user-select: none;
+        /* &__active {} */
+      }
+    }
+  }
+
+  .tab-content-list {
+    overflow: hidden;
+    .tab-content-list-inner {
+      display: flex;
+      position: relative;
+      transition-timing-function: $ease-out;
+      transition-duration: $time-basic;
+      transition-property: left;
+      will-change: left;
+
+      .tab-content-list-item {
+        flex: 1;
+      }
+
+      /* &__moving {} */
+    }
+  }
+}
