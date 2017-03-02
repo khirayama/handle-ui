@@ -5,7 +5,8 @@
   "repository": {},
   "license": "MIT",
   "scripts": {
-    "start": "rm -rf public && mkdir public && cp ./src/index.html ./public/index.html && (webpack-dev-server --content-base public & postcss -c .postcssrc.js src/index.css -w)"
+    "start": "webpack-dev-server & postcss -c .postcssrc.js src/index.css -w",
+    "build": "webpack & postcss -c .postcssrc.js src/index.css"
   },
   "dependencies": {
     "autoprefixer": "^6.7.6",

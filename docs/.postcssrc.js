@@ -1,6 +1,6 @@
 module.exports = {
   from: './src/index.css',
-  to: './public/index.css',
+  to: './index.css',
   plugins: {
     'postcss-easy-import': {
       glob: true,
