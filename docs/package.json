@@ -1,0 +1,23 @@
+{
+  "name": "docs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": {},
+  "license": "MIT",
+  "scripts": {
+    "start": "rm -rf public && mkdir public && cp ./src/index.html ./public/index.html && (webpack-dev-server --content-base public & postcss -c .postcssrc.js src/index.css -w)"
+  },
+  "dependencies": {
+    "autoprefixer": "^6.7.6",
+    "babel-loader": "^6.3.2",
+    "cssnano": "^3.10.0",
+    "postcss-cli": "^3.0.0-beta",
+    "postcss-easy-import": "^2.0.0",
+    "postcss-nested": "^1.0.0",
+    "postcss-simple-vars": "^3.0.0",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.4.1"
+  }
+}
