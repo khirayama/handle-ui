@@ -1,0 +1,36 @@
+.list {
+  list-style: none;
+  position: relative;
+  overflow: scroll;
+}
+.list-content {
+  width: 100%;
+  .list-item {
+    overflow: hidden;
+    transition-timing-function: $ease-out;
+    transition-duration: $time-fast;
+    will-change: transform, height, max-height;
+
+    &__sorting {
+      position: relative;
+      z-index: 1;
+    }
+
+    &-transition-enter {
+      max-height: 0;
+    }
+
+    &-transition-leave {
+      transition-timing-function: $ease-out;
+      transition-duration: $time-fast;
+      transition-property: height;
+      &-active {
+        height: 0!important;
+      }
+    }
+
+    &__moving {
+      position: relative;
+    }
+  }
+}

@@ -1,0 +1,19 @@
+.list {
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+  .list-content {
+    .list-item {
+      cursor: pointer;
+      border-bottom: $border;
+      background-color: $color-white;
+      &__sorting {
+        box-shadow: 0 1px 1px 1px $color-ui-shadow;
+        transition-property: box-shadow;
+      }
+      &:active {
+        cursor: move;
+      }
+    }
+  }
+}

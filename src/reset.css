@@ -4,7 +4,12 @@
 .tab-list-item,
 .tab-content-list,
 .tab-content-list-inner,
-.tab-content-list-item {
+.tab-content-list-item,
+
+/* list */
+.list,
+.list-content,
+.list-item {
   box-sizing: border-box;
   margin: 0;
   padding: 0;

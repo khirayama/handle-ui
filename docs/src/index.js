@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {TabsComponentDocument} from './tabs-component-document';
+import {ListComponentDocument} from './list-component-document';
 
 class Documents extends React.Component {
   render() {
@@ -13,11 +14,16 @@ class Documents extends React.Component {
         <h2 className="handle-ui-components">Components</h2>
         <ul className="handle-ui-component-list">
           <li><a href="#tabs">Tabs</a></li>
+          <li><a href="#list">List</a></li>
         </ul>
 
         <hr/>
 
         <TabsComponentDocument />
+
+        <hr/>
+
+        <ListComponentDocument />
       </section>
     );
   }
