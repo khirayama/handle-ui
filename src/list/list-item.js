@@ -208,16 +208,21 @@ export class ListItem extends Component {
   // animation
   _enterListItemAnimation() {
     const el = this.listItem;
-    const height = el.offsetHeight;
+    let height = el.offsetHeight;
 
-    this.listItem.style.height = height + 'px';
     setTimeout(() => {
       if (el.classList.contains('list-item-transition-enter')) {
         this.listItem.style.transitionProperty = transitionProperties.MAX_HEIGHT;
         this.listItem.style.maxHeight = height + 'px';
         setTimeout(() => {
+          this.listItem.style.height = height + 'px';
           this.listItem.style.transitionProperty = transitionProperties.HEIGHT;
         }, TRANSITION_TIME);
+      } else {
+        setTimeout(() => {
+          height = el.offsetHeight;
+          this.listItem.style.height = height + 'px';
+        }, 0);
       }
     }, 0);
   }

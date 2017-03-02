@@ -4,65 +4,94 @@ import {
   ListItem,
 } from '../../lib/list';
 
+
 export class ListComponentDocument extends React.Component {
+  constructor() {
+    super();
+
+    this.state = {
+      items: ['Item 1', 'Item 2', 'Item 3'],
+      sortableItems: ['Item 1', 'Item 2', 'Item 3'],
+    };
+  }
   render() {
     return (
       <section id="list" className="component-block">
         <h2 className="component-block-title">List</h2>
         <section className="component-block-example">
+          <button onClick={() => {
+            const newItems = this.state.items.concat();
+            newItems.push(`Item ${newItems.length + 1}`);
+            this.setState({
+              items: newItems,
+            });
+          }}>Add item</button>
+          <button onClick={() => {
+            const newItems = this.state.items.concat();
+            newItems.pop();
+            this.setState({
+              items: newItems,
+            });
+          }}>Remove item</button>
           <List>
-            <ListItem>
-              <div className="example-list-item-content">Item 1</div>
-            </ListItem>
-            <ListItem>
-              <div className="example-list-item-content">Item 2</div>
-            </ListItem>
-            <ListItem>
-              <div className="example-list-item-content">Item 3</div>
-            </ListItem>
+            {this.state.items.map((item, index) => {
+              return (
+                <ListItem key={index}>
+                  <div className="example-list-item-content">{item}</div>
+                </ListItem>
+              );
+            })}
           </List>
         </section>
         <pre>
           <code>
 {`<List>
-  <ListItem>
-    <div className="example-list-item-content">Item 1</div>
-  </ListItem>
-  <ListItem>
-    <div className="example-list-item-content">Item 2</div>
-  </ListItem>
-  <ListItem>
-    <div className="example-list-item-content">Item 3</div>
-  </ListItem>
+  {this.state.items.map((item, index) => {
+    return (
+      <ListItem key={index}>
+        <div className="example-list-item-content">{item}</div>
+      </ListItem>
+    );
+  })}
 </List>`}
           </code>
         </pre>
         <p className="component-block-example-description">with Sort</p>
         <section className="component-block-example">
-          <List onSort={(from, to) => console.log(from, to)}>
-            <ListItem>
-              <div className="example-list-item-content">Item 1</div>
-            </ListItem>
-            <ListItem>
-              <div className="example-list-item-content">Item 2</div>
-            </ListItem>
-            <ListItem>
-              <div className="example-list-item-content">Item 3</div>
-            </ListItem>
+          <List onSort={(from, to) => {
+            const newItems = this.state.sortableItems.concat();
+            const tmpItem = newItems.splice(from, 1);
+            newItems.splice(to, 0, tmpItem[0]);
+            this.setState({
+              sortableItems: newItems,
+            });
+          }}>
+            {this.state.sortableItems.map((item, index) => {
+              return (
+                <ListItem key={index}>
+                  <div className="example-list-item-content">{item}</div>
+                </ListItem>
+              );
+            })}
           </List>
         </section>
         <pre>
           <code>
-{`<List onSort={(from, to) => console.log(from, to)}>
-  <ListItem>
-    <div className="example-list-item-content">Item 1</div>
-  </ListItem>
-  <ListItem>
-    <div className="example-list-item-content">Item 2</div>
-  </ListItem>
-  <ListItem>
-    <div className="example-list-item-content">Item 3</div>
-  </ListItem>
+{`<List onSort={(from, to) => {
+  const newItems = this.state.sortableItems.concat();
+  const tmpItem = newItems.splice(from, 1);
+  newItems.splice(to, 0, tmpItem[0]);
+  this.setState({
+    sortableItems: newItems,
+  });
+}}>
+  {this.state.sortableItems.map((item, index) => {
+    return (
+      <ListItem key={index}>
+        <div className="example-list-item-content">{item}</div>
+      </ListItem>
+    );
+  })}
 </List>`}
           </code>
         </pre>
