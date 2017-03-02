@@ -32,6 +32,7 @@
         transition-property: width, left;
         will-change: width, left;
       }
+
       &.tab-list-item__active {
         &::after {
           width: 100%;
@@ -45,11 +46,15 @@
     height: calc(100% - 48px);
     will-change: left;
 
-    .tab-content-list-item {
-      overflow: hidden;
-      width: 100%;
+    .tab-content-list-inner {
       height: 100%;
-      background: #fff;
+
+      .tab-content-list-item {
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+        background: #fff;
+      }
     }
   }
 }
