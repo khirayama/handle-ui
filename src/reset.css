@@ -1,4 +1,4 @@
-/* tab */
+/* tabs */
 .tabs,
 .tab-list,
 .tab-list-item,
@@ -9,7 +9,12 @@
 /* list */
 .list,
 .list-content,
-.list-item {
+.list-item,
+
+/* siwpeable-views */
+.swipeable-view,
+.swipeable-view-content,
+.swipeable-view-background {
   box-sizing: border-box;
   margin: 0;
   padding: 0;

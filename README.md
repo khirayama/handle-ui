@@ -4,6 +4,10 @@ https://khirayama.github.io/handle-ui/
 
 - Tabs
 - List
+- Swipeable Views
+
+- - -
+
 - Header
 - Buttons
   - Flat Button
@@ -14,4 +18,3 @@ https://khirayama.github.io/handle-ui/
 - Dialog
 - Select Field
 - Text Field
-- Swipeable Views

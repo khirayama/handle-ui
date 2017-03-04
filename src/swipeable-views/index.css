@@ -1,0 +1,25 @@
+.swipeable-view {
+  position: relative;
+  overflow: hidden;
+
+  .swipeable-view-content {
+    transition-timing-function: $ease-out;
+    transition-duration: $time-min;
+    background-color: $color-white;
+  }
+
+  .swipeable-view-background {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+  }
+  .swipeable-view-background__left {
+    left: 0;
+  }
+  .swipeable-view-background__right {
+    right: 0;
+  }
+}
