@@ -14,7 +14,7 @@ export class SwipeableViewsComponentDocument extends React.Component {
           <SwipeableView
             onSwipeLeft={() => console.log('on swipe left')}
             onSwipeRight={() => console.log('on swipe right')}
-            througnLeft={true}
+            throughLeft={true}
             >
             <SwipeableViewBackground position='left'><span>L</span></SwipeableViewBackground>
             <SwipeableViewContent>Content</SwipeableViewContent>
@@ -26,7 +26,7 @@ export class SwipeableViewsComponentDocument extends React.Component {
 {`<SwipeableView
   onSwipeLeft={() => console.log('on swipe left')}
   onSwipeRight={() => console.log('on swipe right')}
-  througnLeft={true}
+  throughLeft={true}
   >
   <SwipeableViewBackground position='left'><span>L</span></SwipeableViewBackground>
   <SwipeableViewContent>Content</SwipeableViewContent>

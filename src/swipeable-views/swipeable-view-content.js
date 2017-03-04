@@ -34,11 +34,7 @@ export class SwipeableViewContent extends Component {
     });
   }
   _handleTouchMove(event) {
-    const props = this.context.getProps();
-
-    if (props.disabled) {
-      return;
-    }
+    event.stopPropagation();
 
     if (this.touch.startX === null || this.touch.startY === null) {
       return;
@@ -104,9 +100,9 @@ export class SwipeableViewContent extends Component {
 
     this.swipeableViewContentElement.style.transitionProperty = transitionProperties.TRANSFORM;
 
-    if (this._isRightSwipe() && props.througnRight === true) {
+    if (this._isRightSwipe() && props.throughRight === true) {
       this.swipeableViewContentElement.style.transform = `translateX(100%)`;
-    } else if (this._isLeftSwipe() && props.througnLeft === true) {
+    } else if (this._isLeftSwipe() && props.throughLeft === true) {
       this.swipeableViewContentElement.style.transform = `translateX(-100%)`;
     } else {
       this.swipeableViewContentElement.style.transform = `translateX(0px)`;
