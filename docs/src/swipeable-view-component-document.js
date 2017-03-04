@@ -3,12 +3,12 @@ import {
   SwipeableView,
   SwipeableViewContent,
   SwipeableViewBackground,
-} from '../../lib/swipeable-views';
+} from '../../lib/swipeable-view';
 
-export class SwipeableViewsComponentDocument extends React.Component {
+export class SwipeableViewComponentDocument extends React.Component {
   render() {
     return (
-      <section id="swipeable-views" className="component-block">
+      <section id="swipeable-view" className="component-block">
         <h2 className="component-block-title">Swipeable View</h2>
         <section className="component-block-example">
           <SwipeableView

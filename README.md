@@ -4,7 +4,7 @@ https://khirayama.github.io/handle-ui/
 
 - Tabs
 - List
-- Swipeable Views
+- Swipeable View
 
 - - -
 

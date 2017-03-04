@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {TabsComponentDocument} from './tabs-component-document';
 import {ListComponentDocument} from './list-component-document';
-import {SwipeableViewsComponentDocument} from './swipeable-views-component-document';
+import {SwipeableViewComponentDocument} from './swipeable-view-component-document';
 
 class Documents extends React.Component {
   render() {
@@ -21,7 +21,7 @@ class Documents extends React.Component {
         <hr/>
         <ListComponentDocument/>
         <hr/>
-        <SwipeableViewsComponentDocument/>
+        <SwipeableViewComponentDocument/>
       </section>
     );
   }
