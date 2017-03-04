@@ -92,7 +92,6 @@ export class SwipeableViewContent extends Component {
     this._updateBackgroundView();
   }
   _updateTouchEndView() {
-    const diff = this._calcDiff();
     const props = this.context.getProps();
     const swipeableViewElement = this.context.swipeableViewElement();
     const leftBackgroundElement = swipeableViewElement.querySelector('.swipeable-view-background__left');

@@ -4,7 +4,6 @@ import {
   ListItem,
 } from '../../lib/list';
 
-
 export class ListComponentDocument extends React.Component {
   constructor() {
     super();
@@ -19,20 +18,24 @@ export class ListComponentDocument extends React.Component {
       <section id="list" className="component-block">
         <h2 className="component-block-title">List</h2>
         <section className="component-block-example">
-          <button onClick={() => {
-            const newItems = this.state.items.concat();
-            newItems.push(`Item ${newItems.length + 1}`);
-            this.setState({
-              items: newItems,
-            });
-          }}>Add item</button>
-          <button onClick={() => {
-            const newItems = this.state.items.concat();
-            newItems.pop();
-            this.setState({
-              items: newItems,
-            });
-          }}>Remove item</button>
+          <button
+            onClick={() => {
+              const newItems = this.state.items.concat();
+              newItems.push(`Item ${newItems.length + 1}`);
+              this.setState({
+                items: newItems,
+              });
+            }}
+            >Add item</button>
+          <button
+            onClick={() => {
+              const newItems = this.state.items.concat();
+              newItems.pop();
+              this.setState({
+                items: newItems,
+              });
+            }}
+            >Remove item</button>
           <List>
             {this.state.items.map((item, index) => {
               return (
@@ -45,7 +48,7 @@ export class ListComponentDocument extends React.Component {
         </section>
         <pre>
           <code>
-{`<List>
+            {`<List>
   {this.state.items.map((item, index) => {
     return (
       <ListItem key={index}>
@@ -58,14 +61,16 @@ export class ListComponentDocument extends React.Component {
         </pre>
         <p className="component-block-example-description">with Sort</p>
         <section className="component-block-example">
-          <List onSort={(from, to) => {
-            const newItems = this.state.sortableItems.concat();
-            const tmpItem = newItems.splice(from, 1);
-            newItems.splice(to, 0, tmpItem[0]);
-            this.setState({
-              sortableItems: newItems,
-            });
-          }}>
+          <List
+            onSort={(from, to) => {
+              const newItems = this.state.sortableItems.concat();
+              const tmpItem = newItems.splice(from, 1);
+              newItems.splice(to, 0, tmpItem[0]);
+              this.setState({
+                sortableItems: newItems,
+              });
+            }}
+            >
             {this.state.sortableItems.map((item, index) => {
               return (
                 <ListItem key={index}>
@@ -77,7 +82,7 @@ export class ListComponentDocument extends React.Component {
         </section>
         <pre>
           <code>
-{`<List onSort={(from, to) => {
+            {`<List onSort={(from, to) => {
   const newItems = this.state.sortableItems.concat();
   const tmpItem = newItems.splice(from, 1);
   newItems.splice(to, 0, tmpItem[0]);
@@ -112,8 +117,7 @@ export class ListComponentDocument extends React.Component {
                 <th>Description</th>
               </tr>
             </thead>
-            <tbody>
-            </tbody>
+            <tbody/>
           </table>
         </section>
       </section>

@@ -34,7 +34,7 @@ export class TabsComponentDocument extends React.Component {
         </section>
         <pre>
           <code>
-{`<Tabs>
+            {`<Tabs>
 <TabList>
   <TabListItem index={0}>tab 1</TabListItem>
   <TabListItem index={1}>tab 2</TabListItem>
@@ -93,7 +93,7 @@ export class TabsComponentDocument extends React.Component {
                 <td>TabListItem</td>
                 <td>onActive</td>
                 <td>function</td>
-                <td>{"() => {}"}</td>
+                <td>{'() => {}'}</td>
                 <td>Called when the active this tab.</td>
               </tr>
             </tbody>

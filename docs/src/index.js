@@ -9,27 +9,19 @@ class Documents extends React.Component {
     return (
       <section className="handle-ui-content">
         <h1 className="handle-ui-title">Handle UI</h1>
-
         <hr/>
-
         <h2 className="handle-ui-components">Components</h2>
         <ul className="handle-ui-component-list">
           <li><a href="#tabs">Tabs</a></li>
           <li><a href="#list">List</a></li>
           <li><a href="#swipeable-view">Swipeable View</a></li>
         </ul>
-
         <hr/>
-
-        <TabsComponentDocument />
-
+        <TabsComponentDocument/>
         <hr/>
-
-        <ListComponentDocument />
-
+        <ListComponentDocument/>
         <hr/>
-
-        <SwipeableViewsComponentDocument />
+        <SwipeableViewsComponentDocument/>
       </section>
     );
   }

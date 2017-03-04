@@ -20,7 +20,7 @@ export class SwipeableView extends Component {
       <div
         className="swipeable-view"
         ref={this.setSwipeableViewElement}
-      >{this.props.children}</div>
+        >{this.props.children}</div>
     );
   }
 }
@@ -32,5 +32,4 @@ SwipeableView.childContextTypes = {
 
 SwipeableView.propTypes = {
   children: PropTypes.node,
-  className: PropTypes.string,
 };

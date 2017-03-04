@@ -14,16 +14,16 @@ export class SwipeableViewsComponentDocument extends React.Component {
           <SwipeableView
             onSwipeLeft={() => console.log('on swipe left')}
             onSwipeRight={() => console.log('on swipe right')}
-            throughLeft={true}
+            throughLeft
             >
-            <SwipeableViewBackground position='left'><span>L</span></SwipeableViewBackground>
+            <SwipeableViewBackground position="left"><span>L</span></SwipeableViewBackground>
             <SwipeableViewContent>Content</SwipeableViewContent>
-            <SwipeableViewBackground position='right'><span>R</span></SwipeableViewBackground>
+            <SwipeableViewBackground position="right"><span>R</span></SwipeableViewBackground>
           </SwipeableView>
         </section>
         <pre>
           <code>
-{`<SwipeableView
+            {`<SwipeableView
   onSwipeLeft={() => console.log('on swipe left')}
   onSwipeRight={() => console.log('on swipe right')}
   throughLeft={true}
@@ -51,8 +51,7 @@ export class SwipeableViewsComponentDocument extends React.Component {
                 <th>Description</th>
               </tr>
             </thead>
-            <tbody>
-            </tbody>
+            <tbody/>
           </table>
         </section>
       </section>

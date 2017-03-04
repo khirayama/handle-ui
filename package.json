@@ -11,7 +11,9 @@
     "build:scripts": "babel src --out-dir lib",
     "watch:scripts": "babel src --out-dir lib --watch --source-maps-inline",
     "build:styles": "postcss -c .postcssrc.js src/index.css",
-    "watch:styles": "postcss -c .postcssrc.js -w src/index.css"
+    "watch:styles": "postcss -c .postcssrc.js -w src/index.css",
+    "lint": "eslint --ignore-path .gitignore src",
+    "lint:fix": "eslint --ignore-path .gitignore --fix src"
   },
   "dependencies": {
     "autoprefixer": "^6.7.6",
@@ -20,6 +22,11 @@
     "babel-preset-react": "^6.23.0",
     "classnames": "^2.2.5",
     "cssnano": "^3.10.0",
+    "eslint": "^3.17.0",
+    "eslint-config-xo-react": "^0.10.0",
+    "eslint-config-xo-space": "^0.15.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-react": "^6.10.0",
     "postcss-cli": "^3.0.0-beta",
     "postcss-easy-import": "^2.0.0",
     "postcss-nested": "^1.0.0",
