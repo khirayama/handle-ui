@@ -34,6 +34,12 @@ export class SwipeableViewContent extends Component {
     });
   }
   _handleTouchMove(event) {
+    const props = this.context.getProps();
+
+    if (props.disabled) {
+      return;
+    }
+
     if (this.touch.startX === null || this.touch.startY === null) {
       return;
     }
@@ -86,8 +92,8 @@ export class SwipeableViewContent extends Component {
     };
   }
   _updateTouchMoveView() {
-      this._updateSwipeableViewContentView();
-      this._updateBackgroundView();
+    this._updateSwipeableViewContentView();
+    this._updateBackgroundView();
   }
   _updateTouchEndView() {
     const diff = this._calcDiff();
