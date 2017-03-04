@@ -326,7 +326,9 @@ export class ListItem extends Component {
     const listItemElements = listElement.querySelectorAll('.list-item');
 
     const scrollTop = listElement.scrollTop;
-    const listTop = listElement.getBoundingClientRect().top;
+    const listRect = listElement.getBoundingClientRect();
+    const listTop = listRect.top;
+    const listHeight = listRect.height;
 
     let currentIndex = null;
     let targetIndex = null;
@@ -341,7 +343,11 @@ export class ListItem extends Component {
       if (listItemElement === this.listItem) {
         currentIndex = index;
       }
-      if (
+      if (this.pointer.endY < listTop) {
+        targetIndex = 0;
+      } else if (listTop + listHeight < this.pointer.endY) {
+        targetIndex = listItemElements.length - 1;
+      } else if (
         this.pointer.endX !== null && this.pointer.endY !== null &&
         targetRect.top - scrollTop < this.pointer.endY &&
         this.pointer.endY < targetRect.top + targetRect.height - scrollTop
