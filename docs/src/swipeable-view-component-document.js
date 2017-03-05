@@ -52,7 +52,36 @@ export class SwipeableViewComponentDocument extends React.Component {
                 <th>Description</th>
               </tr>
             </thead>
-            <tbody/>
+            <tbody>
+              <tr>
+                <td>SwipeableView</td>
+                <td>onSwipeLeft</td>
+                <td>Function</td>
+                <td>{'() => {}'}</td>
+                <td>Called when swipe or flick to left.</td>
+              </tr>
+              <tr>
+                <td>SwipeableView</td>
+                <td>onSwipeRight</td>
+                <td>Function</td>
+                <td>{'() => {}'}</td>
+                <td>Called when swipe or flick to right.</td>
+              </tr>
+              <tr>
+                <td>SwipeableView</td>
+                <td>throughRight</td>
+                <td>Boolean</td>
+                <td>false</td>
+                <td>Move animation to through out content when call <strong>swipeLeft</strong>.</td>
+              </tr>
+              <tr>
+                <td>SwipeableView</td>
+                <td>throughLeft</td>
+                <td>Boolean</td>
+                <td>false</td>
+                <td>Move animation to through out content when call <strong>swipeRight</strong>.</td>
+              </tr>
+            </tbody>
           </table>
         </section>
       </section>
