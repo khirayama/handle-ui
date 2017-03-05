@@ -333,26 +333,28 @@ export class ListItem extends Component {
     let currentIndex = null;
     let targetIndex = null;
 
-    for (let index = 0; index < listItemElements.length; index++) {
-      const listItemElement = listItemElements[index];
-      const targetRect = {
-        top: listTop + listItemElement.offsetTop,
-        height: listItemElement.offsetHeight,
-      };
+    if (this.pointer.startX !== null && this.pointer.startY !== null && this.pointer.endX !== null && this.pointer.endY !== null) {
+      for (let index = 0; index < listItemElements.length; index++) {
+        const listItemElement = listItemElements[index];
+        const targetRect = {
+          top: listTop + listItemElement.offsetTop,
+          height: listItemElement.offsetHeight,
+        };
 
-      if (listItemElement === this.listItem) {
-        currentIndex = index;
-      }
-      if (this.pointer.endY < listTop) {
-        targetIndex = 0;
-      } else if (listTop + listHeight < this.pointer.endY) {
-        targetIndex = listItemElements.length - 1;
-      } else if (
+        if (listItemElement === this.listItem) {
+          currentIndex = index;
+        }
+        if (this.pointer.endY < listTop) {
+          targetIndex = 0;
+        } else if (listTop + listHeight < this.pointer.endY) {
+          targetIndex = listItemElements.length - 1;
+        } else if (
         this.pointer.endX !== null && this.pointer.endY !== null &&
-        targetRect.top - scrollTop < this.pointer.endY &&
-        this.pointer.endY < targetRect.top + targetRect.height - scrollTop
+          targetRect.top - scrollTop < this.pointer.endY &&
+          this.pointer.endY < targetRect.top + targetRect.height - scrollTop
       ) {
-        targetIndex = index;
+          targetIndex = index;
+        }
       }
     }
 
