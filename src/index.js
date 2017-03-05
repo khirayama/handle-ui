@@ -9,6 +9,11 @@ import {
   List,
   ListItem,
 } from './list';
+import {
+  SwipeableView,
+  SwipeableViewContent,
+  SwipeableViewBackground,
+} from './swipeable-view';
 
 export {
   Tabs,
@@ -18,4 +23,7 @@ export {
   TabContentListItem,
   List,
   ListItem,
+  SwipeableView,
+  SwipeableViewContent,
+  SwipeableViewBackground,
 };
