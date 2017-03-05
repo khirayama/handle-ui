@@ -9,7 +9,7 @@ export class SwipeableViewComponentDocument extends React.Component {
   render() {
     return (
       <section id="swipeable-view" className="component-block">
-        <h2 className="component-block-title">Swipeable View</h2>
+        <h2 className="component-block-title">Swipeable View(touch device)</h2>
         <section className="component-block-example">
           <SwipeableView
             onSwipeLeft={() => console.log('on swipe left')}
@@ -39,6 +39,7 @@ export class SwipeableViewComponentDocument extends React.Component {
           <p className="component-block-components-title">Components:</p>
           <ul className="component-block-components-list">
             <li>SwipeableView</li>
+            <li>SwipeableViewContent</li>
             <li>SwipeableViewBackground</li>
           </ul>
           <table>

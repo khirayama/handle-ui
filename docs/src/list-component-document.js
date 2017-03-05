@@ -117,7 +117,22 @@ export class ListComponentDocument extends React.Component {
                 <th>Description</th>
               </tr>
             </thead>
-            <tbody/>
+            <tbody>
+              <tr>
+                <td>List</td>
+                <td>onSort</td>
+                <td>Function</td>
+                <td>{'() => {}'}</td>
+                <td>Called when sort items. Get from and to index as arguments</td>
+              </tr>
+              <tr>
+                <td>ListItem</td>
+                <td>onTouchHold</td>
+                <td>Function</td>
+                <td>{'() => {}'}</td>
+                <td>Called when hold view for 500ms.</td>
+              </tr>
+            </tbody>
           </table>
         </section>
       </section>

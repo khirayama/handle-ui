@@ -92,7 +92,7 @@ export class TabsComponentDocument extends React.Component {
               <tr>
                 <td>TabListItem</td>
                 <td>onActive</td>
-                <td>function</td>
+                <td>Function</td>
                 <td>{'() => {}'}</td>
                 <td>Called when the active this tab.</td>
               </tr>

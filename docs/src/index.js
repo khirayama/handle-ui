@@ -14,7 +14,7 @@ class Documents extends React.Component {
         <ul className="handle-ui-component-list">
           <li><a href="#tabs">Tabs</a></li>
           <li><a href="#list">List</a></li>
-          <li><a href="#swipeable-view">Swipeable View</a></li>
+          <li><a href="#swipeable-view">Swipeable View(touch device)</a></li>
         </ul>
         <hr/>
         <TabsComponentDocument/>
