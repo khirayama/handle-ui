@@ -5,15 +5,15 @@ https://khirayama.github.io/handle-ui/
 - Tabs
 - List
 - Swipeable View
+- Icon
 
 - - -
 
-- Header
+- Application Header
 - Buttons
   - Flat Button
   - Floating Button
   - Icon Button
-- Icon
 - Link
 - Dialog
 - Select Field

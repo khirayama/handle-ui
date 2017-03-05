@@ -1,0 +1,12 @@
+.icon {
+  display: inline-block;
+  overflow: hidden;
+  width: 1em;
+  vertical-align: text-bottom;
+  font-style: normal;
+  font-size: inherit;
+  font-family: 'Material Icons';
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: 'liga';
+}

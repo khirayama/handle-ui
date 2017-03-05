@@ -14,6 +14,9 @@ import {
   SwipeableViewContent,
   SwipeableViewBackground,
 } from './swipeable-view';
+import {
+  Icon
+} from './icon';
 
 export {
   Tabs,
@@ -26,4 +29,5 @@ export {
   SwipeableView,
   SwipeableViewContent,
   SwipeableViewBackground,
+  Icon,
 };

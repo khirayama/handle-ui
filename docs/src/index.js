@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import {TabsComponentDocument} from './tabs-component-document';
 import {ListComponentDocument} from './list-component-document';
 import {SwipeableViewComponentDocument} from './swipeable-view-component-document';
+import {IconComponentDocument} from './icon-component-document';
 
 class Documents extends React.Component {
   render() {
@@ -15,6 +16,7 @@ class Documents extends React.Component {
           <li><a href="#tabs">Tabs</a></li>
           <li><a href="#list">List</a></li>
           <li><a href="#swipeable-view">Swipeable View(touch device)</a></li>
+          <li><a href="#icon">Icon</a></li>
         </ul>
         <hr/>
         <TabsComponentDocument/>
@@ -22,6 +24,8 @@ class Documents extends React.Component {
         <ListComponentDocument/>
         <hr/>
         <SwipeableViewComponentDocument/>
+        <hr/>
+        <IconComponentDocument/>
       </section>
     );
   }
