@@ -1,4 +1,7 @@
 import {
+  getUI
+} from './helper';
+import {
   Tabs,
   TabList,
   TabListItem,
@@ -17,8 +20,14 @@ import {
 import {
   Icon
 } from './icon';
+import {
+  FlatButton,
+  FloatingButton,
+  IconButton,
+} from './buttons';
 
 export {
+  getUI,
   Tabs,
   TabList,
   TabListItem,
@@ -30,4 +39,7 @@ export {
   SwipeableViewContent,
   SwipeableViewBackground,
   Icon,
+  FlatButton,
+  FloatingButton,
+  IconButton,
 };

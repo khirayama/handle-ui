@@ -1,0 +1,92 @@
+/* flat button */
+.flat-button {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: $radius;
+  background-color: inherit;
+  font-weight: $font-weight-bold;
+  text-align: center;
+  cursor: pointer;
+  transition: $time-fast;
+  transition-property: background;
+}
+.desktop {
+  .flat-button {
+    &:hover {
+      background-color: $color-ui-active;
+    }
+
+    &:active {
+      background-color: $color-ui-active;
+    }
+  }
+}
+.mobile {
+  .flat-button {
+    padding: 8px;
+  }
+}
+
+/* floating button */
+.floating-button {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: $radius;
+  color: $color-white;
+  background-color: $color-primary;
+  font-weight: $font-weight-bold;
+  text-align: center;
+  cursor: pointer;
+  transition: $time-fast;
+  transition-property: color, background, box-shadow;
+}
+.desktop {
+  .floating-button {
+    &:hover {
+      background-color: $color-primary-light;
+      box-shadow: 0 3px 0 0 rgba($color-primary-light, .3);
+    }
+    &:active {
+      background-color: $color-primary;
+    }
+  }
+}
+.mobile {
+  .floating-button {
+    padding: 8px;
+  }
+}
+
+/* icon button */
+.icon-button {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: $radius;
+  background-color: inherit;
+  color: $color-text-secondary;
+  vertical-align: text-bottom;
+  text-align: center;
+  font-weight: $font-weight-bold;
+  font-style: normal;
+  font-size: inherit;
+  font-family: 'Material Icons';
+  cursor: pointer;
+  transition-timing-function: $ease-out-expo;
+  transition-duration: $time-basic;
+  transition-property: color, background;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: 'liga';
+}
+.desktop {
+  .icon-button {
+    &:hover,
+    &:focus {
+      color: $color-text;
+    }
+
+    &:active {
+      background-color: $color-ui-active;
+      color: $color-text;
+    }
+  }
+}

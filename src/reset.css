@@ -14,7 +14,16 @@
 /* siwpeable-views */
 .swipeable-view,
 .swipeable-view-content,
-.swipeable-view-background {
+.swipeable-view-background,
+
+/* icon */
+.icon,
+
+/* buttons */
+.flat-button,
+.floating-button,
+.icon-button
+{
   box-sizing: border-box;
   margin: 0;
   padding: 0;

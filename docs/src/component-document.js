@@ -15,10 +15,10 @@ export class ComponentDocument extends React.Component {
         {props.codes.map((code, index) => {
           return (
             <div key={index}>
+              <p>{code.description}</p>
               <section className="component-block-example">
                 {(props.children.length) ? props.children[index] : props.children}
               </section>
-              <p>{code.description}</p>
               <pre>
                 <code>{code.text.trim()}</code>
               </pre>
