@@ -99,6 +99,21 @@ hr {
     border: solid 1px #ccc;
     margin: 16px 0;
   }
+  .component-block-components-title {
+    display: inline-block;
+  }
+  .component-block-components-list {
+    display: inline-block;
+    margin-left: 12px;
+    margin-bottom: 12px;
+    li {
+      display: inline-block;
+      font-weight: bold;
+      & + li {
+        margin-left: 8px;
+      }
+    }
+  }
   .component-block-properties {
     width: 100%;
     padding: 12px 0;
@@ -107,21 +122,6 @@ hr {
       font-size: 16px;
       font-weight: normal;
       margin: 16px 0;
-    }
-    .component-block-components-title {
-      display: inline-block;
-    }
-    .component-block-components-list {
-      display: inline-block;
-      margin-left: 12px;
-      margin-bottom: 12px;
-      li {
-        display: inline-block;
-        font-weight: bold;
-        & + li {
-          margin-left: 8px;
-        }
-      }
     }
     table {
       width: 100%;

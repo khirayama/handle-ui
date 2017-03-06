@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {TabsComponentDocument} from './tabs-component-document';
-import {ListComponentDocument} from './list-component-document';
-import {SwipeableViewComponentDocument} from './swipeable-view-component-document';
-import {IconComponentDocument} from './icon-component-document';
+import {TabsDocument} from './tabs-document';
+import {ListDocument} from './list-document';
+import {SwipeableViewDocument} from './swipeable-view-document';
+import {IconDocument} from './icon-document';
 
 class Documents extends React.Component {
   render() {
@@ -19,13 +19,13 @@ class Documents extends React.Component {
           <li><a href="#icon">Icon</a></li>
         </ul>
         <hr/>
-        <TabsComponentDocument/>
+        <TabsDocument/>
         <hr/>
-        <ListComponentDocument/>
+        <ListDocument/>
         <hr/>
-        <SwipeableViewComponentDocument/>
+        <SwipeableViewDocument/>
         <hr/>
-        <IconComponentDocument/>
+        <IconDocument/>
       </section>
     );
   }
