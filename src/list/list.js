@@ -1,8 +1,6 @@
 import React, {Component, PropTypes} from 'react';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import ReactTransitionGroup from 'react-addons-transition-group';
 import classNames from 'classnames';
-
-import {TRANSITION_TIME} from '../constants';
 
 export class List extends Component {
   constructor() {
@@ -31,12 +29,7 @@ export class List extends Component {
         ref={this.setListElement}
         >
         <div className="list-content">
-          <ReactCSSTransitionGroup
-            transitionAppear={false}
-            transitionName="list-item-transition"
-            transitionEnterTimeout={TRANSITION_TIME}
-            transitionLeaveTimeout={TRANSITION_TIME}
-            >{this.props.children}</ReactCSSTransitionGroup>
+          <ReactTransitionGroup>{this.props.children}</ReactTransitionGroup>
         </div>
       </section>
     );

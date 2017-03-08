@@ -1,5 +1,5 @@
 import {
-  getUI
+  getUI,
 } from './helper';
 import {
   Tabs,
@@ -18,7 +18,7 @@ import {
   SwipeableViewBackground,
 } from './swipeable-view';
 import {
-  Icon
+  Icon,
 } from './icon';
 import {
   FlatButton,

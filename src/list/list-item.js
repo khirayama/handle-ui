@@ -44,12 +44,41 @@ export class ListItem extends Component {
 
     this.setListItem = this._setListItem.bind(this);
   }
+  componentWillEnter(done) {
+    const el = this.listItem;
+    const height = el.offsetHeight;
+
+    el.style.maxHeight = '0px';
+
+    el.style.transitionProperty = transitionProperties.MAX_HEIGHT;
+    setTimeout(() => {
+      el.style.maxHeight = height + 'px';
+    }, 0);
+    setTimeout(() => {
+      el.style.maxHeight = '';
+      el.style.transitionProperty = '';
+      done();
+    }, TRANSITION_TIME);
+  }
+  componentWillLeave(done) {
+    const el = this.listItem;
+    const height = el.offsetHeight;
+
+    el.style.height = height + 'px';
+
+    el.style.transitionProperty = transitionProperties.HEIGHT;
+    setTimeout(() => {
+      el.style.height = '0px';
+    }, 0);
+
+    setTimeout(() => {
+      done();
+    }, TRANSITION_TIME);
+  }
   componentDidMount() {
     // can't prevent event passive in Chrome.
     // because not use onTouchMove
     this.listItem.addEventListener('touchmove', this.handleTouchMove);
-
-    this._enterListItemAnimation();
   }
 
   // handling event
@@ -206,26 +235,6 @@ export class ListItem extends Component {
   }
 
   // animation
-  _enterListItemAnimation() {
-    const el = this.listItem;
-    let height = el.offsetHeight;
-
-    setTimeout(() => {
-      if (el.classList.contains('list-item-transition-enter')) {
-        this.listItem.style.transitionProperty = transitionProperties.MAX_HEIGHT;
-        this.listItem.style.maxHeight = height + 'px';
-        setTimeout(() => {
-          this.listItem.style.height = height + 'px';
-          this.listItem.style.transitionProperty = transitionProperties.HEIGHT;
-        }, TRANSITION_TIME);
-      } else {
-        setTimeout(() => {
-          height = el.offsetHeight;
-          this.listItem.style.height = height + 'px';
-        }, 0);
-      }
-    }, 0);
-  }
   _moveCurrentListItemAnimation() {
     const diff = this._calcDiff();
     const scrollDiff = this.pointer.startScrollTop - this.context.listElement().scrollTop;
