@@ -49,13 +49,13 @@ hr {
 }
 
 .handle-ui-content {
-  max-width: 680px;
-  margin: 32px auto;
+  max-width: 780px;
+  margin: 16px auto;
 }
 
 .handle-ui-title {
-  padding: 16px;
-  font-size: 24px;
+  padding: 32px 16px;
+  font-size: 32px;
 }
 
 .handle-ui-components {
@@ -82,22 +82,18 @@ hr {
       &:visited {
         color: #444;
       }
+      &:before {
+        content: '- ';
+      }
     }
   }
 }
 
 .component-block {
-  padding: 16px;
+  padding: 72px 16px;
   .component-block-title {
-    font-size: 20px;
-    margin: 16px 0;
-  }
-  .component-block-example-description {
-    margin: 24px 0 16px;
-  }
-  .component-block-example {
-    border: solid 1px #ccc;
-    margin: 16px 0;
+    font-size: 24px;
+    margin-bottom: 12px;
   }
   .component-block-components-title {
     display: inline-block;
@@ -105,7 +101,7 @@ hr {
   .component-block-components-list {
     display: inline-block;
     margin-left: 12px;
-    margin-bottom: 12px;
+    margin-bottom: 48px;
     li {
       display: inline-block;
       font-weight: bold;
@@ -114,6 +110,13 @@ hr {
       }
     }
   }
+  .component-block-example {
+    border: solid 1px #ccc;
+    margin-bottom: 8px;
+  }
+  pre {
+    margin-bottom: 48px;
+  }
   .component-block-properties {
     width: 100%;
     padding: 12px 0;
@@ -121,7 +124,7 @@ hr {
     .component-block-properties-title {
       font-size: 16px;
       font-weight: normal;
-      margin: 16px 0;
+      margin-bottom: 8px;
     }
     table {
       width: 100%;
