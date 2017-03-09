@@ -21,23 +21,22 @@
       &::after {
         position: absolute;
         z-index: 0;
-        left: 0;
+        left: 50%;
         bottom: 0;
         width: 0;
         height: 3px;
         content: '';
-        transform: translateX(50%);
+        transform: translateX(-50%);
         background: $color-primary;
         transition-timing-function: $ease-out-expo;
         transition-duration: $time-basic;
-        transition-property: width, transform;
-        will-change: width, transform;
+        transition-property: width;
+        will-change: width;
       }
 
       &.tab-list-item__active {
         &::after {
           width: 100%;
-          transform: translateX(0);
         }
       }
     }
