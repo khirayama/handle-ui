@@ -28,6 +28,15 @@
 
       .tab-content-list-item {
         flex: 1;
+        .tab-content-list-item-inner {
+          width: 100%;
+          height: 100%;
+        }
+      }
+      .tab-content-list-item__hidden {
+        .tab-content-list-item-inner {
+          display: none;
+        }
       }
 
       /* &__moving {} */
