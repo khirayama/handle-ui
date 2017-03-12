@@ -1,6 +1,9 @@
 .swipeable-view {
-  position: relative;
   overflow: hidden;
+
+  &__moving {
+    position: relative;
+  }
 
   .swipeable-view-content {
     transition-timing-function: $ease-out;
