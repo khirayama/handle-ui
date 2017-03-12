@@ -25,6 +25,9 @@ import {
   FloatingButton,
   IconButton,
 } from './buttons';
+import {
+  LinkText,
+} from './link-text';
 
 export {
   getUI,
@@ -42,4 +45,5 @@ export {
   FlatButton,
   FloatingButton,
   IconButton,
+  LinkText,
 };
