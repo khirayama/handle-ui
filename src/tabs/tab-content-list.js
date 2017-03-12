@@ -129,7 +129,7 @@ export class TabContentList extends Component {
 
     if (this.touch.moving && diff.x !== 0 && (Math.abs(diff.delta.x) > Math.abs(diff.delta.y)) && (Math.abs(diff.x) > Math.abs(diff.y))) {
       this.tabContentList.classList.add('tab-content-list__moving');
-      this.tabContentList.style.left = `calc(-${this.context.currentIndex * 100}% + ${diff.x}px)`;
+      this.tabContentList.style.transform = `translateX(calc(-${this.context.currentIndex * 100 / this.props.children.length}% + ${diff.x}px))`;
       this.tabContentList.style.transitionProperty = 'none';
     }
   }
@@ -138,8 +138,8 @@ export class TabContentList extends Component {
       this.tabContentList.classList.remove('tab-content-list__moving');
     }
 
-    this.tabContentList.style.left = `calc(-${this.context.currentIndex * 100}%)`;
-    this.tabContentList.style.transitionProperty = 'left';
+    this.tabContentList.style.transform = `translateX(calc(-${this.context.currentIndex * 100 / this.props.children.length}%))`;
+    this.tabContentList.style.transitionProperty = 'transform';
   }
   _setTabContentList(tabContentList) {
     this.tabContentList = tabContentList;
@@ -148,7 +148,7 @@ export class TabContentList extends Component {
     const diff = this._calcFilteredDiff();
     const style = {
       width: (this.props.children.length * 100) + '%',
-      left: `calc(-${this.context.currentIndex * 100}% + ${diff.x}px)`,
+      transform: `translateX(calc(-${this.context.currentIndex * 100 / this.props.children.length}% + ${diff.x}px))`,
     };
 
     return (

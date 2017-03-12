@@ -1,9 +1,6 @@
 .swipeable-view {
+  position: relative;
   overflow: hidden;
-
-  &__moving {
-    position: relative;
-  }
 
   .swipeable-view-content {
     transition-timing-function: $ease-out;
@@ -13,11 +10,11 @@
 
   .swipeable-view-background {
     display: none;
-    width: 100%;
-    height: 100%;
     position: absolute;
     top: 0;
     z-index: -1;
+    width: 100%;
+    height: 100%;
   }
   .swipeable-view-background__left {
     left: 0;

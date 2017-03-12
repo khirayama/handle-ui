@@ -20,11 +20,10 @@
     overflow: hidden;
     .tab-content-list-inner {
       display: flex;
-      position: relative;
       transition-timing-function: $ease-out;
       transition-duration: $time-basic;
-      transition-property: left;
-      will-change: left;
+      transition-property: transform;
+      will-change: transform;
 
       .tab-content-list-item {
         flex: 1;
