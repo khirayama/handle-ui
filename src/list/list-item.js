@@ -203,6 +203,9 @@ export class ListItem extends Component {
 
   // update views
   _updatePointerMoveView() {
+    const listElement = this.context.listElement();
+
+    listElement.classList.add('list__sorting');
     this.listItem.classList.add('list-item__sorting');
 
     this._moveCurrentListItemAnimation();

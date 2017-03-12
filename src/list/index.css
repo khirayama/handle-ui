@@ -1,6 +1,9 @@
 .list {
   list-style: none;
   overflow: scroll;
+  &__sorting {
+    position: relative;
+  }
 }
 .list-content {
   width: 100%;
